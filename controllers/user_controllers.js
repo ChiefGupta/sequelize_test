@@ -1,10 +1,11 @@
-const db = require("./models/index.js")
+const db = require("../models/index.js")
 const user = db.user
 
 exports.createUser = async(req,res) => {
     try{
         const body = req.body
         const data = await user.create(body)
+        console.log(body)
         res.send({
             status: true,
             data: data
